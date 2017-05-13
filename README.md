@@ -1,30 +1,63 @@
-# simple-rest
-Simple JavaEE REST-API
+#Endpoints - URLS
 
-Zadanie zaliczeniowe nr 5
-Twoim zadaniem jest zaprojektowanie API Rest’owego dla serwisu zajmującego się dostarczaniem
-informacji o filmach (tak jak znany portal filmweb). Twoja aplikacja ma dawać możliwość:
-    -Wyświetlania listy wszystkich filmów
-    -Wyświetlenie filmu o podanym id
-    -Dodanie nowego filmu
-    -Zaktualizowanie informacji o firmie
-    -Wyświetlania komentarzy danego filmu
-    -Dodanie komentarza pod konkretny film
-    -Usunięcie komentarza
-    -Wystawienie oceny (aczkolwiek ocena filmu jest średnią wszystkich dodanych ocen pod dany
-film)
+###/films
+```Method: GET
+Description: Returns list of all movies from the application.```
+ 
+###/films
+```Method: POST
+Input format: { "name": "Movie name" }
+Description: Creates and returns new movie.```
 
-1. Zaprojektuj postać URL
-2. Dobierz odpowiednie metody HTTP
-3. Zaimplementuj usługi
-4. Dodaj dokumentację:
-a. postać obiektów JSON,
-b. adresy URL
-c. przykładowe obiekty JSON’owe do testowania
+###/films/{id}
+```Method: POST
+Input format: { "name": "Updated movie name" }
+Description: Updates and returns updated movie with specified id.```
 
-Zadanie bonusowe (za 5 pktów):
-    -Dodawania aktorów
-    -Przydzielenie filmu danemu aktorowi
-    -Wyświetlenie aktorów danego filmu
-    -Wyświetlenie filmów danego aktora
-    -Tak jak w zadaniu podstawowym dodaj dokumentację.
+###/films/{id}/actors
+```Method: GET
+Description: Returns list of all actors of movie with specified id.```
+
+###/films/{id}/comments
+```Method: GET
+Description: Returns list of all comments of movie with specified id.```
+
+###/films/{id}/comments
+```Method: POST
+Input format: { "text": "Comment" }
+Description: Creates new comment for specified movie and returns it.```
+
+###/films/{id}/rate/{rating}
+```Method: POST
+Input format: Body is not required.
+Description: Updates rating of the movie and returns this movie (rating should be integer number).```
+
+###/films/{id}
+```Method: GET
+Description: Returns movie with specified ID.```
+
+###/comments/{id}
+```Method: DELETE
+Description: Removes comment with specified ID.```
+
+###/actors
+```Method: GET
+Description: Returns all actors from the application.```
+
+###/actors/{id}
+```Method: GET
+Description: Returns actor with specified id from the application.```
+
+###/actors/{id}/films
+```Method: GET
+Description: Returns all films of specified actor.```
+
+###/actors
+```Method: POST
+Input format: { "name": "Actor name" }
+Description: Creates and returns new actor.```
+
+###/actors/{actorId}/assign-to-film/{filmId}
+```Method: POST
+Input format: Body is not required.
+Description: Connects specified actor with specified film.```
