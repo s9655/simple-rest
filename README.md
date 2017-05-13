@@ -1,63 +1,63 @@
-#Endpoints - URLS
+# Endpoints - URLS
 
-###/films
+### /films
 ```Method: GET
 Description: Returns list of all movies from the application.```
  
-###/films
+### /films
 ```Method: POST
 Input format: { "name": "Movie name" }
 Description: Creates and returns new movie.```
 
-###/films/{id}
+### /films/{id}
 ```Method: POST
 Input format: { "name": "Updated movie name" }
 Description: Updates and returns updated movie with specified id.```
 
-###/films/{id}/actors
+### /films/{id}/actors
 ```Method: GET
 Description: Returns list of all actors of movie with specified id.```
 
-###/films/{id}/comments
+### /films/{id}/comments
 ```Method: GET
 Description: Returns list of all comments of movie with specified id.```
 
-###/films/{id}/comments
+### /films/{id}/comments
 ```Method: POST
 Input format: { "text": "Comment" }
 Description: Creates new comment for specified movie and returns it.```
 
-###/films/{id}/rate/{rating}
+### /films/{id}/rate/{rating}
 ```Method: POST
 Input format: Body is not required.
 Description: Updates rating of the movie and returns this movie (rating should be integer number).```
 
-###/films/{id}
+### /films/{id}
 ```Method: GET
 Description: Returns movie with specified ID.```
 
-###/comments/{id}
+### /comments/{id}
 ```Method: DELETE
 Description: Removes comment with specified ID.```
 
-###/actors
+### /actors
 ```Method: GET
 Description: Returns all actors from the application.```
 
-###/actors/{id}
+### /actors/{id}
 ```Method: GET
 Description: Returns actor with specified id from the application.```
 
-###/actors/{id}/films
+### /actors/{id}/films
 ```Method: GET
 Description: Returns all films of specified actor.```
 
-###/actors
+### /actors
 ```Method: POST
 Input format: { "name": "Actor name" }
 Description: Creates and returns new actor.```
 
-###/actors/{actorId}/assign-to-film/{filmId}
+### /actors/{actorId}/assign-to-film/{filmId}
 ```Method: POST
 Input format: Body is not required.
 Description: Connects specified actor with specified film.```
